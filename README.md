@@ -3,7 +3,7 @@
 ## [See Live Preview](https://github.com/facebook/create-react-app).
 
 
-## Used Technologies
+## Used Technologies for client side
 ### React.js
 ### TailwindCSS
 ### DaisyUI
@@ -12,6 +12,10 @@
 ### Firebase
 
 
+## Used technology for servier side 
+### Node.js
+### Express.js
+### MongoDB
 
 
 
