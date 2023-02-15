@@ -9,14 +9,14 @@ const Dashboard = () => {
             <div className='w-[30%]  px-10 py-4 h-[100vh]'>
                 <div className="text-start mt-10">
                     <Link to='/dashboard/registered-volunteer' className='flex  text-[#207FEE]'>
-                        <span class="material-symbols-outlined text-md mr-2">
+                        <span className="material-symbols-outlined text-md mr-2">
                             supervisor_account
                         </span>
                         <h5> Registered Volunteer List</h5>
                     </Link>
                     <br />
                     <Link to='/dashboard/add-event' className='flex'>
-                        <span class="material-symbols-outlined text-md mr-2">
+                        <span className="material-symbols-outlined text-md mr-2">
                             add
                         </span>
                         <h5>Add Event</h5>
