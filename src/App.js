@@ -21,8 +21,8 @@ function App() {
           <Route path='/donations' element={<Donations/>}/>
           <Route path='/events' element={<MyEvents/>}/>
           <Route path='/blogs' element={<Blogs/>}/>
-          <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route path='/dashboard/add-event' element={<AddEvent/>}/>
+          <Route path='/dashboard/*' element={<Dashboard/>}/>
+          {/* <Route path='/dashboard/add-event' element={<AddEvent/>}/> */}
 
 
 

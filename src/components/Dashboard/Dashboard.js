@@ -1,38 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import AddEvent from './AddEvent';
+import RegisteredVolunteer from './RegisteredVolunteer';
 
 const Dashboard = () => {
     return (
         <section className='flex '>
             <div className='w-[30%]  px-10 py-4 h-[100vh]'>
                 <div className="text-start mt-10">
-                    <h5>Registered Volunteer List</h5>
+                    <Link to='/dashboard/registered-volunteer'> <h5>Registered Volunteer List</h5></Link>
                     <br />
                     <Link to='/dashboard/add-event'><h5>Add Event</h5></Link>
+                    <Outlet />
                 </div>
             </div>
             <div className=' bg-[#F5F6FA] w-full mt-4'>
-                <div className='bg-white ml-8 mt-8 mb-16 mr-10 py-8 px-6 rounded-[20px]'>
-                    <table className='p-6 w-full '>
-                        <tr className='bg-[#F5F6FA] h-[50px] text-gray'>
-                            <th>Name</th>
-                            <th>Email ID</th>
-                            <th>Register date</th>
-                            <th>Volunteer List</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div>
-               
+                <Routes>
+                    <Route path='/add-event' element={<AddEvent></AddEvent>} />
+                    <Route path='/registered-volunteer' element={<RegisteredVolunteer />} />
+                </Routes>
 
             </div>
         </section>

@@ -37,7 +37,7 @@ const AddEvent = () => {
                 </label>
                 <input className='input input-bordered rounded-none' type="text" onClick={()=>setOpen(!open)} value={value.getDate()} />
                 {
-                    open && <Calendar className='absolute z-10 bg-blue-100 p-10 min-w-[200px]' onChange={onChange} value={value} />
+                    open && <Calendar className='absolute z-10 bg-white p-10 min-w-[200px] shadow-lg  ' onChange={onChange} value={value} />
                 }
 
             </div>
@@ -52,11 +52,11 @@ const AddEvent = () => {
            
             <div>
 
-                <label className="label">
+                <label for='file' className="label">
                     <span className="label-text-alt">Banner</span>
-
+                    
                 </label>
-                <input type="file" className="file-input file-input-bordered  w-full max-w-xs rounded-[0]" />
+                <input type="file" className= "hidded file-input file-input-bordered  w-full max-w-xs rounded-[0]" />
             </div>
 
         </section>
