@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import heroImg from '../../images/heroImg.jpg'
+import logo from '../../images/logos/Group 1329.png'
 
 
 const Header = () => {
     return (
-        <header className='xl:container mx-auto' >
+        <header className='xl:container lg:pl-8 lg:pr-10 mx-auto py-4' >
             <div className="navbar bg-base-100 ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -17,11 +18,13 @@ const Header = () => {
                             <li><Link to='/donations'>Donations</Link></li>
                             <li><Link to='/events'>Events</Link></li>
                             <li><Link to='/blogs'>Blog</Link></li>
-
+                            <li><Link to='/dashboard'>Dashboard</Link></li>
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">
+                        <img className='w-40' src={logo} alt="" />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -29,13 +32,14 @@ const Header = () => {
                         <li><Link to='/donations'>Donations</Link></li>
                         <li><Link to='/events'>Events</Link></li>
                         <li><Link to='/blogs'>Blog</Link></li>
+                        <li><Link to='/dashboard'>Dashboard</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn bg-[#3F90FC] border-none text-white">Get started</button>
+                    <button className="btn bg-[#3F90FC] border-none text-white">Get Started</button>
                 </div>
             </div>
-           
+
         </header>
     );
 };

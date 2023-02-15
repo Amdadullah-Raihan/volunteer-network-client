@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -7,7 +8,7 @@ const Dashboard = () => {
                 <div className="text-start mt-10">
                     <h5>Registered Volunteer List</h5>
                     <br />
-                    <h5>Add Event</h5>
+                    <Link to='/dashboard/add-event'><h5>Add Event</h5></Link>
                 </div>
             </div>
             <div className=' bg-[#F5F6FA] w-full mt-4'>
@@ -30,7 +31,10 @@ const Dashboard = () => {
                     </table>
                 </div>
             </div>
+            <div>
+               
 
+            </div>
         </section>
     );
 };

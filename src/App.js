@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Dashboard from './components/Dashboard/Dashboard';
 import Donations from './components/Donations/Donations'
+import AddEvent from './components/Dashboard/AddEvent';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/events' element={<MyEvents/>}/>
           <Route path='/blogs' element={<Blogs/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/dashboard/add-event' element={<AddEvent/>}/>
 
 
 
