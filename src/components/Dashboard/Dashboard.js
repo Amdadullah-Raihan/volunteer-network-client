@@ -11,7 +11,7 @@ const Dashboard = () => {
                     <Link to='/dashboard/registered-volunteer'> <h5>Registered Volunteer List</h5></Link>
                     <br />
                     <Link to='/dashboard/add-event'><h5>Add Event</h5></Link>
-                    <Outlet />
+                   
                 </div>
             </div>
             <div className=' bg-[#F5F6FA] w-full mt-4'>
@@ -19,6 +19,7 @@ const Dashboard = () => {
                     <Route path='/add-event' element={<AddEvent></AddEvent>} />
                     <Route path='/registered-volunteer' element={<RegisteredVolunteer />} />
                 </Routes>
+                <Outlet />
 
             </div>
         </section>
