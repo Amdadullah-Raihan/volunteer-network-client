@@ -14,6 +14,7 @@ import VolunteerRegistration from './components/VolunteerRegistration/VolunteerR
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
 import PrivateDashboard from './components/PrivateRoute/PrivateDashboard';
+import Event from './components/Event/Event';
 
 function App() {
   return (
@@ -21,15 +22,16 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home/>} />
           <Route path='/donations' element={<Donations />} />
           <Route path='/events' element={<MyEvents />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/volunteer-registration' element={<VolunteerRegistration />} />
           <Route path='/login'element={<Login/>}/>
-          <Route path='/events/:_id'/>
+          <Route path='/events/:_id' element={<Event/>} />
 
           {/* private routes  starts*/}
+          {/* <Route path='/events/:_id' element={<PrivateRoute><Event/></PrivateRoute>}/> */}
 
           <Route path='/dashboard/*' element={<PrivateDashboard><Dashboard /></PrivateDashboard>}>
           {/* private routes ends*/}
