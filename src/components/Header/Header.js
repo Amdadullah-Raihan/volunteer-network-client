@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import heroImg from '../../images/heroImg.jpg'
 import logo from '../../images/logos/Group 1329.png'
 
 
 const Header = () => {
+    const {user}= useFirebase();
+
     return (
         <header className='xl:container lg:pl-8 lg:pr-10 mx-auto py-4' >
             <div className="navbar bg-base-100 ">
@@ -18,7 +21,9 @@ const Header = () => {
                             <li><Link to='/donations'>Donations</Link></li>
                             <li><Link to='/events'>Events</Link></li>
                             <li><Link to='/blogs'>Blog</Link></li>
-                            <li><Link to='/dashboard'>Dashboard</Link></li>
+                            {
+                                user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>
+                            }
 
                         </ul>
                     </div>
@@ -32,7 +37,9 @@ const Header = () => {
                         <li><Link to='/donations'>Donations</Link></li>
                         <li><Link to='/events'>Events</Link></li>
                         <li><Link to='/blogs'>Blog</Link></li>
-                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                        {
+                            user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
