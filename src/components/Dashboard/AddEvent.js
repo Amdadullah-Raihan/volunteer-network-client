@@ -39,6 +39,7 @@ const AddEvent = () => {
                     alert("Event Added Successfully!")
 
                 }
+                
                 setTitle('')
                 setImage('')
                 setDescription('')
@@ -63,7 +64,7 @@ const AddEvent = () => {
                 </div>
                 <div className='text-start'>
                     <p>Description</p>
-                    <textarea className='border w-full px-4 py-4 min-h-[100px] h-auto overflow-wrap' type="text" name="" id="" placeholder='Enter Description' required onBlur={(e) => setDescription(e.target.value)} />
+                    <textarea className='border w-full px-4 py-4 min-h-[100px] h-auto ' type="text" name="" id="" placeholder='Enter Description' required onBlur={(e) => setDescription(e.target.value)} />
                 </div>
                 <div className='text-start'>
                     <p>Banner</p>

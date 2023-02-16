@@ -8,7 +8,7 @@ const RegisteredVolunteer = () => {
                     <tr className='bg-[#F5F6FA] h-[50px] text-gray'>
                         <th>Name</th>
                         <th>Email ID</th>
-                        <th>Register date</th>
+                        <th>Registration date</th>
                         <th>Volunteer List</th>
                         <th>Action</th>
                     </tr>

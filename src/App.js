@@ -10,25 +10,32 @@ import Footer from './components/Footer/Footer';
 import Dashboard from './components/Dashboard/Dashboard';
 import Donations from './components/Donations/Donations'
 import AddEvent from './components/Dashboard/AddEvent';
+import VolunteerRegistration from './components/VolunteerRegistration/VolunteerRegistration';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-         <Header/>
+        <Header />
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/donations' element={<Donations/>}/>
-          <Route path='/events' element={<MyEvents/>}/>
-          <Route path='/blogs' element={<Blogs/>}/>
-          <Route path='/dashboard/*' element={<Dashboard/>}/>
-          {/* <Route path='/dashboard/add-event' element={<AddEvent/>}/> */}
+          <Route path='/' element={<Home />} />
+          <Route path='/donations' element={<Donations />} />
+          <Route path='/events' element={<MyEvents />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/volunteer-registration' element={<VolunteerRegistration />} />
+            {/* <Route path='/dashboard/*' element={<Dashboard/>} /> */}
+          <Route path='/dashboard/*' element={<PrivateRoute isLogged={false}><Dashboard/></PrivateRoute>}>
+
+
+          </Route>
 
 
 
-          <Route path='*' element={<NotFound/>}/>
-        
-        
+
+          <Route path='*' element={<NotFound />} />
+
+
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>

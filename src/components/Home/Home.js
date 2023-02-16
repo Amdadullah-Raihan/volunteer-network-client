@@ -6,7 +6,7 @@ import HeroSection from './HeroSection';
 const Home = () => {
     useEvents()
     return (
-        <div>
+        <div className=''>
             <HeroSection/>
             <EventsSection/>
         </div>
