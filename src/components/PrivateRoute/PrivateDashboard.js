@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
+import Home from '../Home/Home'
 
 
 const PrivateDashboard = ({ children }) => {
@@ -13,10 +14,10 @@ const PrivateDashboard = ({ children }) => {
 
 
     if (!user?.email) {
-        return <p>Loadding...</p>
+        return <Home/>
     }
 
-    return user.email ? children : <Navigate to='/' state={{ from: location }} replace></Navigate>
+    return user.email && children 
 
 
 

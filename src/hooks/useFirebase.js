@@ -52,6 +52,7 @@ const useFirebase = () => {
     return (
         {
             user,
+            setUser,
             error,
             setError,
             isLoading,

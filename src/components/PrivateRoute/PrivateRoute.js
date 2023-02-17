@@ -1,21 +1,29 @@
 import { async } from '@firebase/util';
-import React, { useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
+import Login from '../../components/Login/Login'
 
+const auth = getAuth()
 
 const PrivateRoute = ({ children }) => {
-    const { user, isLoading } = useFirebase();
+    const { user, handleGoogleSignIn} = useFirebase();
+    const [isLoading, setIsLoading] = useState()
+
     const location = useLocation();
+   
+   
+   if(!user?.email){
+     return <div>
+        <Login></Login>
+     </div>
+   }
 
 
-    if (isLoading) {
-        return <p>Laodding...</p>
-    }
-
-
-    return user?.email ? children : <Navigate to='/' state={{ from: location }} replace></Navigate>
+    return user?.email && children 
+    // : <Navigate to='/login' state={{ from: location }} replace></Navigate>
 
 
 };
