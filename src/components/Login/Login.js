@@ -1,10 +1,20 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 
 const Login = () => {
-    const {user,handleGoogleSignIn,handleSignOut} = useFirebase();
+    const {user,setUser,handleGoogleSignIn,handleSignOut} = useFirebase();
+  
+
+    // const handleRedirect = () =>{
+    //   handleGoogleSignIn()
+    //   .then(result=>{
+    //     setUser(result.user)
+    //     navigate(redirect_uri)
+    //   })
+    // }
     return (
         <div>
           <h1 className='text-2xl uppercase mb-2 '>Log in</h1>

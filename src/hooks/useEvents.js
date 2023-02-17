@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useEvents = () => {
     const [events, setEvents] = useState()
     const [isLoading, setIsLoading] = useState(true)
-    console.log(isLoading);
+    // console.log(isLoading);
 
     useEffect(() => {
         
@@ -11,7 +11,7 @@ const useEvents = () => {
             .then(res => res.json())
             .then(events=>{
                 setIsLoading(false)
-                console.log(events);
+                // console.log(events);
                 setEvents(events)
             })
     }, [])

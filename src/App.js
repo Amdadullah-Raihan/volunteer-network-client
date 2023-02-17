@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import MyEvents from './components/MyEvents/MyEvents';
 import Blogs from './components/Blogs/Blogs';
@@ -28,15 +28,16 @@ function App() {
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/volunteer-registration' element={<VolunteerRegistration />} />
           <Route path='/login'element={<Login/>}/>
-          <Route path='/events/:_id' element={<Event/>} />
+          {/* <Route path='/events/:_id' element={<Event/>} /> */}
 
           {/* private routes  starts*/}
-          {/* <Route path='/events/:_id' element={<PrivateRoute><Event/></PrivateRoute>}/> */}
+          <Route path='/events/:_id' element={<PrivateRoute><Event/></PrivateRoute>}/>
 
-          <Route path='/dashboard/*' element={<PrivateDashboard><Dashboard /></PrivateDashboard>}>
+          <Route path='/dashboard/*' element={<PrivateDashboard><Dashboard /></PrivateDashboard>} />
+            
+          
+         
           {/* private routes ends*/}
-
-          </Route>
 
 
 
