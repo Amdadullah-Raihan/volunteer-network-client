@@ -6,7 +6,7 @@ import HeroSection from './HeroSection';
 const Home = () => {
     useEvents()
     return (
-        <div className=''>
+        <div className='min-h-[70vh]'>
             <HeroSection/>
             <EventsSection/>
         </div>

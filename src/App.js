@@ -18,7 +18,7 @@ import Event from './components/Event/Event';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -46,7 +46,7 @@ function App() {
 
 
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   );

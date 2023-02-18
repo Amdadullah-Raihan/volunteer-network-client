@@ -26,8 +26,8 @@ const EventsSection = () => {
 
 
     return (
-        <div className='relative w-[100vw] h-auto lg:container mx-auto mb-16 z-10'>
-            <div className="absolute top-[-120px] z-20  grid grid-cols-4 w-full gap-4">
+        <div className=' w-[100vw] h-auto lg:container mx-auto mb-16 z-10'>
+            <div className="relative mt-[-30px] top-[-120px] z-20  grid grid-cols-4 w-full gap-4">
 
                 {
                     !events ?
