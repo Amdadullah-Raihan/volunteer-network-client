@@ -20,7 +20,7 @@ const Header = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/donations'>Donations</Link></li>
                             <li><Link to='/events'>My Events</Link></li>
-                            <li><Link to='/blogs'>Blog</Link></li>
+                            <li><Link to='/blogs'>Blogs</Link></li>
                             {
                                 user?.email ? <li> <button onClick={handleSignOut}>Log out</button></li> :
 
@@ -41,7 +41,7 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/donations'>Donations</Link></li>
                         <li><Link to='/events'>My Events</Link></li>
-                        <li><Link to='/blogs'>Blog</Link></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
                         {
                             user?.email && <li><Link to='/dashboard'>Dashboard</Link></li>
                         }
