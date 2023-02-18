@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavLink, Outlet, Route, Routes } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import AddEvent from './AddEvent';
 import ManageEvents from './ManageEvents';
 import RegisteredVolunteer from './RegisteredVolunteer';
 
 const Dashboard = () => {
+
+    //changing title accordign to page
+    useTitle('Dashboard - Volunteer Network')
 
     let activeStyle = {
         color:'#2083EF', 

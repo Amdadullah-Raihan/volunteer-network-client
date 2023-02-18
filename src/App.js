@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -22,21 +22,21 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/' element={<Home />} />
           <Route path='/donations' element={<Donations />} />
           <Route path='/events' element={<MyEvents />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/volunteer-registration' element={<VolunteerRegistration />} />
-          <Route path='/login'element={<Login/>}/>
+          <Route path='/login' element={<Login />} />
           {/* <Route path='/events/:_id' element={<Event/>} /> */}
 
           {/* private routes  starts*/}
-          <Route path='/events/:_id' element={<PrivateRoute><Event/></PrivateRoute>}/>
+          <Route path='/events/:_id' element={<PrivateRoute><Event /></PrivateRoute>} />
 
           <Route path='/dashboard/*' element={<PrivateDashboard><Dashboard /></PrivateDashboard>} />
-            
-          
-         
+
+
+
           {/* private routes ends*/}
 
 
@@ -46,7 +46,7 @@ function App() {
 
 
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );

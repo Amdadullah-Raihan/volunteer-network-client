@@ -2,12 +2,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import VolunteerRegistration from '../VolunteerRegistration/VolunteerRegistration';
 
 const Event = () => {
     const { _id } = useParams();
     const [data, setData] = useState({});
 
+
+    //changing title accordign to page
+    useTitle('Event - Volunteer Network')
 
     useEffect(() => {
         fetch(`http://localhost:5000/events/${_id}`)

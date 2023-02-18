@@ -2,12 +2,14 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
+import useTitle from '../../hooks/useTitle';
 
 
 const Login = () => {
   const { user, setUser, handleGoogleSignIn, handleSignOut } = useFirebase();
-
-
+ 
+  //changing title accordign to page
+  useTitle('Log in - Volunteer Network')
   // const handleRedirect = () =>{
   //   handleGoogleSignIn()
   //   .then(result=>{

@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import useEvents from '../../hooks/useEvents';
+import useTitle from '../../hooks/useTitle';
 
 const ManageEvents = () => {
     const [events,setEvents, isLoading] = useEvents();
+    //changing title accordign to page
+    useTitle('Dashboard - Manage Events - Volunteer Network')
 
 
     const handleDeleteEvent = id =>{

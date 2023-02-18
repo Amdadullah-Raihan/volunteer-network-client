@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
+import useTitle from '../../hooks/useTitle';
 
 
 const AddEvent = () => {
@@ -9,6 +10,9 @@ const AddEvent = () => {
     const [imgUrl, setImgUrl] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+
+    //changing title accordign to page
+    useTitle('Dashboard - Add Event - Volunteer Network')
    
     console.log(title);
     const handleImageChange = (e) => {

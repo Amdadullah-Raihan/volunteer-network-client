@@ -46,9 +46,8 @@ const EventsSection = () => {
                                     <button className="btn">Register</button>
                                  </div> */}
 
-                                <div className='h-[75%] overflow-hidden bg-cover w-full' style={{backgroundImage:`url(${event.imageUrl})`}}>
-                                    {/* <img src={event.imageUrl} alt='' className=' overflow-hidden w-full bg-[
-                                    #fff] rounded-t-[10px]' /> */}
+                                <div className='h-[75%] overflow-hidden bg-cover w-full bg-[#fff] rounded-lg' style={{backgroundImage:`url(${event.imageUrl})`}}>
+                                    
                                </div>
                                <div className='h-[25%]'>
                                     <Link to={`/events/${event._id}`}>

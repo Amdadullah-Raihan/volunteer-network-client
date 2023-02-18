@@ -1,8 +1,10 @@
 import React from 'react';
 import useEvents from '../../hooks/useEvents';
+import useTitle from '../../hooks/useTitle';
 
 const RegisteredVolunteer = () => {
-    
+    //changing title accordign to page
+    useTitle('Dashboard - Registered Volunteer - Volunteer Network')
 
     return (
         <div>
