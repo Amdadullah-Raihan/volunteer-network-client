@@ -6,14 +6,31 @@ import Calendar from 'react-calendar';
 const AddEvent = () => {
     const [value, onChange] = useState(new Date());
     const [open, setOpen] = useState(false);
-    const [image, setImage] = useState('');
+    const [imgUrl, setImgUrl] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    console.log(image);
+   
     console.log(title);
     const handleImageChange = (e) => {
         e.preventDefault();
-        setImage(e.target.files[0]);
+        const img = e.target.files[0];
+        const formData = new FormData();
+        formData.append('image',img);
+        const api_key = '';
+
+        const url = "https://api.imgbb.com/1/upload?expiration=600&key=8484f85b7788ffca18f1fd5d203bc0fa";
+        fetch(url,{
+            method:"POST",
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(imgData=>{
+            console.log(imgData.data.url);
+            setImgUrl(imgData.data.url)
+        })
+        
+
+        // setImage();
         // console.log(e.target.files)
     }
 
@@ -21,12 +38,12 @@ const AddEvent = () => {
 
     const handleUpload = async (e) => {
         e.preventDefault(); //prevent reload on submit
-        if (!image && title && !description) {
+        if (!imgUrl && title && !description) {
             return;
         }
 
         await axios.post('http://localhost:5000/addEvent', {
-            'image': image,
+            'imageUrl': imgUrl,
             'title': title,
             'descriptions': description,
             'date': value
@@ -41,7 +58,7 @@ const AddEvent = () => {
                 }
                 
                 setTitle('')
-                setImage('')
+                setImgUrl('')
                 setDescription('')
 
             })

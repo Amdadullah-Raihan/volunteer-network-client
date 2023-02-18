@@ -26,8 +26,8 @@ const EventsSection = () => {
 
 
     return (
-        <div className='relative w-[100vw] h-auto lg:container mx-auto mb-16'>
-            <div className="absolute top-[-120px] z-10  grid grid-cols-4 w-full gap-4">
+        <div className='relative w-[100vw] h-auto lg:container mx-auto mb-16 z-10'>
+            <div className="absolute top-[-120px] z-20  grid grid-cols-4 w-full gap-4">
 
                 {
                     !events ?
@@ -46,10 +46,15 @@ const EventsSection = () => {
                                     <button className="btn">Register</button>
                                  </div> */}
 
-                                <img src={event.image} alt={event.image.name} className='h-[75%] bg-white rounded-t-[10px]' />
-                                <Link to={`/events/${event._id}`}>
-                                    <button className={`w-full h-[25%] items-center flex text-white uppercase font-semibold justify-center rounded-b-[10px]`} style={{ backgroundColor: `${randomColor}` }} >{event.title}</button>
-                                </Link>
+                                <div className='h-[75%] overflow-hidden bg-cover w-full' style={{backgroundImage:`url(${event.imageUrl})`}}>
+                                    {/* <img src={event.imageUrl} alt='' className=' overflow-hidden w-full bg-[
+                                    #fff] rounded-t-[10px]' /> */}
+                               </div>
+                               <div className='h-[25%]'>
+                                    <Link to={`/events/${event._id}`}>
+                                        <button className={`w-full h-full items-center flex text-white uppercase font-semibold justify-center rounded-b-[10px]`} style={{ backgroundColor: `${randomColor}` }} >{event.title}</button>
+                                    </Link>
+                               </div>
 
                             </div>
                         )

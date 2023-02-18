@@ -16,16 +16,21 @@ const Login = () => {
   //   })
   // }
   return (
-    <div className=' form-control max-w-[570px] mx-auto mt-40 min-h-[570px] bg-[#F4F7FC] border flex flex-col justify-center items-center shadow-lg px-12' >
-      <h1 className='text-2xl uppercase mb-6 '>Log in</h1>
-      {
-        user?.email ?
-          <button className="btn  w-full rounded-3xl	" onClick={handleSignOut}>Log out</button>
-          :
-          <button className="btn  w-full rounded-3xl	" onClick={handleGoogleSignIn}>Log in with google</button>
-      }
-      <p className='mt-4 '>Don't have and account? <span className='text-blue-500 '>Create account</span></p>
-    </div>
+    
+      <div className=' w-full form-control max-w-[570px] mx-auto  min-h-[570px] bg-[#F4F7FC] border flex flex-col justify-center lg:mt-28 items-center shadow-lg px-12' >
+        {
+          user?.email ? <p className='mb-8 text-2xl'>{user.email}</p>: <p className='text-2xl mb-8 uppercase'>Log in</p>
+        }
+        
+        {
+          user?.email ?
+            <button className="btn  w-full rounded-3xl	" onClick={handleSignOut}>Log out</button>
+            :
+            <button className="btn  w-full rounded-3xl	" onClick={handleGoogleSignIn}>Log in with google</button>
+        }
+        <p className='mt-4 '>Don't have and account? <span className='text-blue-500 '>Create account</span></p>
+      </div>
+    
   );
 };
 

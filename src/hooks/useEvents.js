@@ -10,9 +10,9 @@ const useEvents = () => {
         fetch('http://localhost:5000/events')
             .then(res => res.json())
             .then(events=>{
-                setIsLoading(false)
                 // console.log(events);
                 setEvents(events)
+                setIsLoading(false)
             })
     }, [])
 
