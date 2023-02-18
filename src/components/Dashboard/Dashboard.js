@@ -14,8 +14,8 @@ const Dashboard = () => {
         color:'#2083EF', 
     };
     return (
-        <section className='flex'>
-            <div className='w-[30%]  px-10 py-4 h-[100vh]'>
+        <section className='md:flex'>
+            <div className='w-[30%] px-10 py-4 lg:h-[100vh] '>
                 <div className="text-start mt-10">
                     <NavLink
                         style={({ isActive }) =>

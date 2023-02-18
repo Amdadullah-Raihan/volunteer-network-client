@@ -28,7 +28,7 @@ const ManageEvents = () => {
 
     return (
         <div>
-            <div className='bg-white ml-8 mt-8 mb-16 mr-10 py-8 px-6 rounded-[20px]'>
+            <div className='bg-white md:ml-8 md:mt-8 md:mb-16 md:mr-10 py-8 md:px-6 px-2 rounded-[20px]'>
                 <table className='w-full  '>
                     <thead className='bg-[#F5F6FA] h-[50px] text-gray grid grid-cols-3 items-center'>
                         <th>Event Title</th>

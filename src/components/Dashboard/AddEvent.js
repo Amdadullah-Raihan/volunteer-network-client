@@ -70,7 +70,7 @@ const AddEvent = () => {
 
     console.log(value);
     return (
-        <section className='m-20 p-10 bg-white max-w-[800px] rounded-[20px] '>
+        <section className='md:m-20 p-10 w-full bg-white md:max-w-[800px] rounded-[20px] '>
             <form onSubmit={handleUpload} className='grid grid-cols-1 gap-6'>
                 <div className='text-start'>
                     <p>Event Title</p>
