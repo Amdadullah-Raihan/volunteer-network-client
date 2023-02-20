@@ -11,16 +11,16 @@ const AddEvent = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
+    console.log(imgUrl);
     //changing title accordign to page
     useTitle('Dashboard - Add Event - Volunteer Network')
-   
-    console.log(title);
+  
     const handleImageChange = (e) => {
         e.preventDefault();
         const img = e.target.files[0];
         const formData = new FormData();
         formData.append('image',img);
-        const api_key = '';
+        
 
         const url = "https://api.imgbb.com/1/upload?expiration=600&key=8484f85b7788ffca18f1fd5d203bc0fa";
         fetch(url,{
@@ -31,7 +31,11 @@ const AddEvent = () => {
         .then(imgData=>{
             console.log(imgData.data.url);
             setImgUrl(imgData.data.url)
-        })
+        }).catch(err=>{
+            console.log(err);
+        }
+
+        )
         
 
         // setImage();
@@ -42,9 +46,9 @@ const AddEvent = () => {
 
     const handleUpload = async (e) => {
         e.preventDefault(); //prevent reload on submit
-        if (!imgUrl && title && !description) {
-            return;
-        }
+        // if (imgUrl==='' && title==='' && !description==='') {
+        //     return;
+        // }
 
         await axios.post('http://localhost:5000/addEvent', {
             'imageUrl': imgUrl,
@@ -58,39 +62,40 @@ const AddEvent = () => {
 
                 if (events.data.insertedId) {
                     alert("Event Added Successfully!")
+                    setTitle('')
+                    setImgUrl('')
+                    setDescription('');
 
                 }
                 
-                setTitle('')
-                setImgUrl('')
-                setDescription('')
+              
 
             })
     }
 
-    console.log(value);
+    // console.log(value);
     return (
         <section className='md:m-20 p-10 w-full bg-white md:max-w-[800px] rounded-[20px] '>
             <form onSubmit={handleUpload} className='grid grid-cols-1 gap-6'>
                 <div className='text-start'>
                     <p>Event Title</p>
-                    <input className='border w-full px-4 py-2' type="text" onBlur={(e) => setTitle(e.target.value)} name="" id="" placeholder='Enter Title' required />
+                    <input className='border w-full px-4 py-2' type="text" onChange={(e) => setTitle(e.target.value)} name="" id="" placeholder='Enter Title' required  value={title}/>
                 </div>
                 <div className='text-start'>
                     <p>Event Date</p>
                     <input className='border w-full px-4 py-2' type="text" name="" id="" onBlur={(e) => onChange(value)} onClick={() => { setOpen(!open) }} value={value} readOnly required />
                     {
-                        open && <Calendar className='max-w-[500px] shadow-lg p-8 ' onChange={onChange} value={value} />
+                        open && <Calendar className='max-w-[500px] shadow-lg p-8 ' onChange={onChange} />
                     }
                 </div>
                 <div className='text-start'>
                     <p>Description</p>
-                    <textarea className='border w-full px-4 py-4 min-h-[100px] h-auto ' type="text" name="" id="" placeholder='Enter Description' required onBlur={(e) => setDescription(e.target.value)} />
+                    <textarea className='border w-full px-4 py-4 min-h-[100px] h-auto ' type="text" name="" id="" placeholder='Enter Description' required onChange={(e) => setDescription(e.target.value)} value={description} />
                 </div>
                 <div className='text-start'>
                     <p>Banner</p>
                     <label htmlFor="file" className='' >
-                        <input className=' border' type="file" accept='image/*' name="" id=""
+                        <input className=' border' type="file" accept='image/*' name="" id="img-file"
                             onChange={handleImageChange} required />
                     </label>
                 </div>

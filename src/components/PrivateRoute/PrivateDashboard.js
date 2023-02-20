@@ -7,7 +7,7 @@ import Home from '../Home/Home'
 
 const PrivateDashboard = ({ children }) => {
     const { user } = useFirebase();
-    console.log(user);
+    // console.log(user);
     const location = useLocation();
 
 

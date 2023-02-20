@@ -14,7 +14,7 @@ import VolunteerRegistration from './components/VolunteerRegistration/VolunteerR
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
 import PrivateDashboard from './components/PrivateRoute/PrivateDashboard';
-import Event from './components/Event/Event';
+import Event from './components/SingleEvent/Event';
 
 function App() {
   return (

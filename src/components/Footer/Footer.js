@@ -30,7 +30,7 @@ const Footer = () => {
                 <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                     <div className="box-border	">
                         <div className='flex items-center'>
-                            <i class="fa-regular fa-copyright text-4xl mr-2"></i>
+                            <i className="fa-regular fa-copyright text-4xl mr-2"></i>
                             <p>Volunteer Network Ltd. </p>
                         </div>
                         <p>Providing charity service since 1970</p>
@@ -38,13 +38,13 @@ const Footer = () => {
                     <div className="md:place-self-center md:justify-self-end">
                         <div className="grid grid-flow-col gap-4">
                             <Link>
-                                <i class="fa-brands fa-twitter text-xl"></i>
+                                <i className="fa-brands fa-twitter text-xl"></i>
                             </Link>
                             <Link>
-                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                                <i className="fa-brands fa-facebook-f text-xl"></i>
                             </Link>
                             <Link>
-                                <i class="fa-brands fa-youtube text-xl"></i>
+                                <i className="fa-brands fa-youtube text-xl"></i>
                             </Link>
                         </div>
                     </div>

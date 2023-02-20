@@ -10,15 +10,15 @@ const ManageEvents = () => {
 
 
     const handleDeleteEvent = id =>{
-        console.log(id);
+        // console.log(id);
         const url = 'http://localhost:5000/events';
         axios.post(url, {'id' : id})
         .then(result=>{
            
             if (result?.data.deletedCount){
                 alert("items deleted")
-            //    const newEvents = events.filter(event => !event._id === id)
-            //    setEvents(newEvents);
+               const newEvents = events.filter(event => event._id !== id)
+               setEvents(newEvents);
             }
             else{
                 alert('Could not delete the event!! ')
@@ -44,7 +44,7 @@ const ManageEvents = () => {
                                     <td className='flex items-center justify-evenly'>
                                         {/* <button className='btn btn-update'>Update</button> */}
                                         <button onClick={()=>handleDeleteEvent(event._id)}>
-                                            <span class="material-symbols-outlined text-red-500 font-bold text-3xl">
+                                            <span className="material-symbols-outlined text-red-500 font-bold text-3xl">
                                                 delete
                                             </span>
                                         </button>
