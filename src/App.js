@@ -24,7 +24,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/donations' element={<Donations />} />
-          <Route path='/events' element={<MyEvents />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/volunteer-registration' element={<VolunteerRegistration />} />
           <Route path='/login' element={<Login />} />
@@ -32,6 +31,7 @@ function App() {
 
           {/* private routes  starts*/}
           <Route path='/events/:_id' element={<PrivateRoute><Event /></PrivateRoute>} />
+          <Route path='/my-events' element={<PrivateRoute><MyEvents /></PrivateRoute>} />
 
           <Route path='/dashboard/*' element={<PrivateDashboard><Dashboard /></PrivateDashboard>} />
 

@@ -22,7 +22,7 @@ const AddEvent = () => {
         formData.append('image',img);
         
 
-        const url = "https://api.imgbb.com/1/upload?expiration=600&key=8484f85b7788ffca18f1fd5d203bc0fa";
+        const url = "https://api.imgbb.com/1/upload?&key=8484f85b7788ffca18f1fd5d203bc0fa";
         fetch(url,{
             method:"POST",
             body: formData
