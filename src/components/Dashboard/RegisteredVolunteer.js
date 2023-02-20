@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useEvents from '../../hooks/useEvents';
 import useTitle from '../../hooks/useTitle';
 
 const RegisteredVolunteer = () => {
     //changing title accordign to page
     useTitle('Dashboard - Registered Volunteer - Volunteer Network')
+
+    useEffect(()=>{
+        const url = 'http://localhost:5000/registered-users'
+        fetch(url)
+        .then(res=>res.json())
+        .then(result => {
+            console.log(result);
+        })
+    
+    
+    
+    },[])
 
     return (
         <div>

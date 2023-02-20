@@ -56,6 +56,7 @@ const useFirebase = () => {
             error,
             setError,
             isLoading,
+            setIsLoading,
             handleGoogleSignIn,
             handleSignOut
 
